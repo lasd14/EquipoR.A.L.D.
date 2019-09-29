@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bienes Raices</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+
+    <style>
+            html,
+            body,
+            #map-canvas {
+                height: 100%;
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+            }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <img src="img/logo2.svg" alt="Logotipo de MovElec" class="logo2">
+                <div class="mobile-menu">
+                    <a href="#navegacion">
+                        <img src="img/barras.svg" alt="Icono Menu">
+                    </a>
+                </div>
+                <nav id="navegacion" class="navegacion">
+                    <a href="index.html">Inicio</a>
+                    <a href="anuncios.html">Movilidad Eléctrica</a>
+                    <a href="blog.html">Estaciones de Carga</a>
+                    <a href="mapa2.html">Compra tu EcoAuto</a>
+                    <a href="nosotros.html">Estadísticas</a>
+                </nav>
+            </div>
+        </div> <!-- contenedor -->
+    </header>
+
+    <main class="contenedor seccion contenido-centrado">
+        <h1 class="fw-300 centrar-texto">¿Dónde Comprar?</h1>
+    
+    </main>
+
+
+        <script>
+
+            //cargadores electricos
+            function initialize() {
+                var myLatlng = new google.maps.LatLng(9.0145644, -79.4778898);
+                var myLatlng2 = new google.maps.LatLng(9.022064, -79.461817);
+
+                //options
+                var mapOptions = {
+                    zoom: 14,
+                    center: myLatlng
+                }
+
+                var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                // Lugar 1
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: 'Lexus, Avenida B, Costa del Este, 041979, Ciudad de Panamá, Panamá',
+
+                });
+
+                // Lugar 2
+                var marker2 = new google.maps.Marker({
+                    position: myLatlng2,
+                    map: map,
+                    title: 'BMW, Calle Costa Dorada, Costa del Este, Ciudad de Panamá, Panamá'
+
+                });
+
+
+
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+        </script>
+
+<div id="map-canvas"></div>
+    
+    <footer class="site-footer seccion">
+        <div class="contenedor contenedor-footer">
+            <nav class="navegacion">
+                <a href="index.html">Inicio</a>
+                <a href="anuncios.html">Movilidad Eléctrica</a>
+                <a href="blog.html">Estaciones de Carga</a>
+                <a href="mapa2.html">Compra tu EcoAuto</a>
+                <a href="nosotros.html">Estadísticas</a>
+            </nav>
+            <p class="copyright">Todos los Derechos Reservados 2019 &copy; </p>
+        </div>
+    </footer>
+</body>
+</html>
